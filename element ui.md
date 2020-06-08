@@ -22,4 +22,22 @@
                 }
             })
         },
+
+
+
+
+
+<el-table-column prop="EquipLocalName" label="设备本地名称" show-overflow-tooltip>
+             <template slot-scope="scope">
+              <div>
+                {{scope.row.EquipLocalName}}
+                <el-badge v-if="scope.row.Component&&scope.row.Component.length?true:false"
+                  :value="scope.row.Component&&scope.row.Component.length?scope.row.Component.length:0" class="item" type="warning">
+                </el-badge>
+              </div>
+            </template>
+          </el-table-column>
+
 ```
+
+
