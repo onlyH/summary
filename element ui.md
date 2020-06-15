@@ -41,3 +41,46 @@
 ```
 
 
+```
+  <el-select
+    v-model='ruleForm.LineDash'
+    placeholder='请选择'
+    size='small'
+    style='width:160px;margin-right:24px'
+    ref='select1'
+    @change='changeLineType'
+>
+    <el-option v-for='item in borderLineOption' :key='item.id' :label='item.src' :value='item.id'>
+        <img :src='item.src' alt />
+    </el-option>
+</el-select>
+
+         borderLineOption: [
+                {
+                    id: 'solid',
+                    src: require('@/assets/imgs/1pxline.jpg')
+                },
+                {
+                    id: 'dashed',
+                    src: require('@/assets/imgs/dashedLine.jpg')
+                },
+                {
+                    id: 'dotted',
+                    src: require('@/assets/imgs/dotLine.jpg')
+                }
+            ],
+       changeLineType(val) {
+            this.$set(this.ruleForm, 'LineDash', val)
+            this.borderLineOptionObject = val && this.borderLineOption.find(item => item.id == val)
+            if (this.$refs.select1 && this.$refs.select1.$el) {
+                this.$refs.select1.$el.children[0].children[0].setAttribute(
+                    'style',
+                    'background:url(' + this.borderLineOptionObject.src + ')  center center no-repeat;color:transparent;'
+                )
+            }
+            if (this.view) {
+                this.view.lineType = val
+            }
+        },
+```
+
