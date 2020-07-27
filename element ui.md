@@ -84,3 +84,6 @@
         },
 ```
 
+```
+  <el-input v-model='ruleForm.Name' class='reset-input-name' oninput='if(value.length>20)value=value.slice(0,20)'></el-input>
+```
