@@ -84,3 +84,15 @@
         },
 ```
 
+```
+  <el-input v-model='ruleForm.Name' class='reset-input-name' oninput='if(value.length>20)value=value.slice(0,20)'></el-input>
+```
+
+```
+   <el-table-column prop='position' label='对应广场说明书的位置' show-overflow-tooltip>
+                    <template slot-scope='{row}'>
+                        <span>{{ row.GraphCategorys.length?row.GraphCategorys.map(item => item.Name).join(' ，'):'' }}</span>
+                    </template>
+                </el-table-column>
+
+```
