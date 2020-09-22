@@ -96,3 +96,12 @@
                 </el-table-column>
 
 ```
+
+```
+//<el-table>序号逐次增加，翻页时继续累加，解决翻页时从编号1开始的情况
+        <el-table-column label="序号" type="index" align='center' width="50">
+          <template scope="scope">
+            {{ scope.$index + (currentPage - 1) * pageSize + 1 }}
+          </template>
+        </el-table-column>
+```
