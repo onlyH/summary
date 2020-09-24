@@ -1,4 +1,4 @@
-```
+```javascript
 let checkLogin  = ()=> {
     return new Promise((resolve,reject)=> {
         let flag = document.cookie.includes('userId')
