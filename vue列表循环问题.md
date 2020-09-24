@@ -1,4 +1,4 @@
-```
+```javascript
 <template>
   <div>
     <div class="saga-brand-box mt90 por">
