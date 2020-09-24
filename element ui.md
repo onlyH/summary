@@ -1,4 +1,4 @@
-```
+```javascript
 <el-upload
     class='upload-demo'
     action='https://jsonplaceholder.typicode.com/posts/'
@@ -41,7 +41,7 @@
 ```
 
 
-```
+```javascript
   <el-select
     v-model='ruleForm.LineDash'
     placeholder='请选择'
@@ -84,11 +84,11 @@
         },
 ```
 
-```
+```javascript
   <el-input v-model='ruleForm.Name' class='reset-input-name' oninput='if(value.length>20)value=value.slice(0,20)'></el-input>
 ```
 
-```
+```javascript
    <el-table-column prop='position' label='对应广场说明书的位置' show-overflow-tooltip>
                     <template slot-scope='{row}'>
                         <span>{{ row.GraphCategorys.length?row.GraphCategorys.map(item => item.Name).join(' ，'):'' }}</span>
@@ -97,7 +97,7 @@
 
 ```
 
-```
+```javascript
 //<el-table>序号逐次增加，翻页时继续累加，解决翻页时从编号1开始的情况
         <el-table-column label="序号" type="index" align='center' width="50">
           <template scope="scope">
