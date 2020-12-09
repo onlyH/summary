@@ -1,0 +1,61 @@
+1. 可读的代码是可维护的
+2. 删除不必要的代码注释
+3. 重视命名
+```javascript
+function mergeNumberList() {
+    return [...new Set([...list1, list2])]
+}
+
+function margeLists(list1, list2) {
+    return [...list1, ...list2]
+}
+function createUniqueList(list) {
+    return [...new Set(list)]
+}
+
+```
+4. if语句
+```javascript
+if (value == 'one' || value == 'two' || value == 'three') {
+    // ...
+}
+
+const options = ['one', 'two', 'thress']
+if (options.includes(value)) {
+    // ..
+}
+```
+5. 提前退出机制
+function handleEvent(event) {
+    if (event) {
+        const target = event.target
+        if (target) {
+            // ..
+        }
+    }
+}
+
+function handleEvent(event) {
+    if (!event || !event.target) {
+        // ..
+    }
+}
+6. 解构赋值
+- 解构赋值语法是一种javascript表达式，通过解构赋值，可以将值从数组，属性，对象中提取出来，赋值给其他变量。
+```javascript
+const numbers = {one:1,two:2}
+const {one,two} = numbers
+console.log(one); //1
+console.log(two); //2
+
+const numbers = [1,2,3,4,5]
+const [one,two] = numbers
+console.log(one); //1
+console.log(two); //2
+
+//避免命名冲突
+const url = "http://localhost:8080/api/v1/organizers/1"
+const response = await axios.get(url)
+const {name: organizerName} = response.data
+
+```
