@@ -81,3 +81,12 @@ str.substr(0, 4) + "-" + str.substr(4, 2) + "-" + str.substr(6, 2) + " " + str.s
 i.value = source.filter(item => transArray.includes(item.code)).map(item => item.name).join(',')
 
 ```
+
+```
+    if (this.instance.hasOwnProperty(i.path)) {
+              if (!Array.isArray(this.instance[i.path])) {
+                let transArray = this.instance[i.path].split(',')
+                i.value = source.filter(item => transArray.includes(item.code)).map(item => item.name).join(',')
+              }
+            }
+```
