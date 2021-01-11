@@ -40,7 +40,43 @@
 
 ```
 
-
+```
+      <el-upload
+        class="upload-demo"
+        :drag="true"
+        action="/api/datacenter/graphic/import"
+        multiple
+        :show-file-list='false'
+        name="file"
+        :headers="headers"
+        :data="dataId"
+        :on-progress="progress"
+        :on-success="success"
+        :on-error="error"
+      >
+        <i class="el-icon-upload"/>
+        <div
+          class="el-upload__text"
+          v-html="values.uploadTxt"
+        />
+        <div class="upload__tip danger" slot="tip">{{ values.uploadTips}}</div>
+      </el-upload>
+      
+   headers() {
+        return {
+          'ProjectId': this.projectId,
+          'Comming': 'adm',
+          'Account': storage.get("user_name")
+        }
+      },
+      dataId() {
+        return {
+          relType: localStorage.getItem('RelationType') || '',
+          zoneType: localStorage.getItem('ZoneType') || '',
+          projectId: this.projectId
+        }
+      },
+```
 ```javascript
   <el-select
     v-model='ruleForm.LineDash'
