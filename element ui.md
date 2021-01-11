@@ -40,7 +40,7 @@
 
 ```
 
-```
+```vue
       <el-upload
         class="upload-demo"
         :drag="true"
